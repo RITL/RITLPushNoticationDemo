@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ViewController.h
 //  RITL_OriginPushTest
 //
 //  Created by YueWen on 2016/9/23.
@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
-@property (strong, nonatomic) UIWindow *window;
+@interface RITLOriginPushMainViewController : UIViewController
 
 
 @end
+
+NS_ASSUME_NONNULL_END
 

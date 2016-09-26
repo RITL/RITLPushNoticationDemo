@@ -6,13 +6,13 @@
 //  Copyright © 2016年 YueWen. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RITLOriginPushMainViewController.h"
 
-@interface ViewController ()
+@interface RITLOriginPushMainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation RITLOriginPushMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
