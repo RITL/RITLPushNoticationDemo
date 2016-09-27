@@ -12,6 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+/// iOS10 之后对推送进行处理的类目
 @interface RITLOriginPushAppDelegate (RITLUserNotifications)<UNUserNotificationCenterDelegate>
 
 @end

@@ -15,7 +15,49 @@
 		DB0054731D94CE9500A75829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0054711D94CE9500A75829 /* LaunchScreen.storyboard */; };
 		DB00547D1D95073700A75829 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB00547C1D95073700A75829 /* UserNotifications.framework */; };
 		DB1B24B51D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B24B41D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m */; };
+		DB1B24BE1D990D1C002BC2FF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB00547C1D95073700A75829 /* UserNotifications.framework */; };
+		DB1B24C01D990D1C002BC2FF /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1B24BF1D990D1C002BC2FF /* UserNotificationsUI.framework */; };
+		DB1B24C41D990D1C002BC2FF /* RITLNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B24C31D990D1C002BC2FF /* RITLNotificationViewController.m */; };
+		DB1B24C71D990D1C002BC2FF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1B24C51D990D1C002BC2FF /* MainInterface.storyboard */; };
+		DB1B24CB1D990D1C002BC2FF /* NoticationContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB1B24BD1D990D1C002BC2FF /* NoticationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB1B24D11D99115D002BC2FF /* Stitch.png in Resources */ = {isa = PBXBuildFile; fileRef = DB1B24D01D99115D002BC2FF /* Stitch.png */; };
+		DB1B24DA1D9912E7002BC2FF /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1B24D91D9912E7002BC2FF /* NotificationService.m */; };
+		DB1B24DE1D9912E7002BC2FF /* NoticationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB1B24D61D9912E7002BC2FF /* NoticationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB6DF7581D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF7571D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m */; };
+		DB6DF75E1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF75D1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB1B24C91D990D1C002BC2FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB0054581D94CE9500A75829 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB1B24BC1D990D1C002BC2FF;
+			remoteInfo = NoticationContentExtension;
+		};
+		DB1B24DC1D9912E7002BC2FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB0054581D94CE9500A75829 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB1B24D51D9912E7002BC2FF;
+			remoteInfo = NoticationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB1B24CF1D990D1C002BC2FF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DB1B24DE1D9912E7002BC2FF /* NoticationServiceExtension.appex in Embed App Extensions */,
+				DB1B24CB1D990D1C002BC2FF /* NoticationContentExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DB0054601D94CE9500A75829 /* RITL_OriginPushTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RITL_OriginPushTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +74,22 @@
 		DB00547C1D95073700A75829 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		DB1B24B31D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RITLOriginPushAppDelegate+RITLUserNotifications.h"; sourceTree = "<group>"; };
 		DB1B24B41D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RITLOriginPushAppDelegate+RITLUserNotifications.m"; sourceTree = "<group>"; };
+		DB1B24BD1D990D1C002BC2FF /* NoticationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NoticationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1B24BF1D990D1C002BC2FF /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		DB1B24C21D990D1C002BC2FF /* RITLNotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RITLNotificationViewController.h; sourceTree = "<group>"; };
+		DB1B24C31D990D1C002BC2FF /* RITLNotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RITLNotificationViewController.m; sourceTree = "<group>"; };
+		DB1B24C61D990D1C002BC2FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DB1B24C81D990D1C002BC2FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB1B24D01D99115D002BC2FF /* Stitch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stitch.png; sourceTree = "<group>"; };
+		DB1B24D61D9912E7002BC2FF /* NoticationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NoticationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1B24D81D9912E7002BC2FF /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		DB1B24D91D9912E7002BC2FF /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		DB1B24DB1D9912E7002BC2FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB6DF7561D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RITLOriginPushAppDelegate+RITLOldNotification.h"; sourceTree = "<group>"; };
+		DB6DF7571D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RITLOriginPushAppDelegate+RITLOldNotification.m"; sourceTree = "<group>"; };
+		DB6DF75C1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RITLOriginPushAppDelegate+RITLNotificationManager.h"; sourceTree = "<group>"; };
+		DB6DF75D1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RITLOriginPushAppDelegate+RITLNotificationManager.m"; sourceTree = "<group>"; };
+		DB6DF75F1D9A172400BDD894 /* RITLOpenFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RITLOpenFunction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +101,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB1B24BA1D990D1C002BC2FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1B24C01D990D1C002BC2FF /* UserNotificationsUI.framework in Frameworks */,
+				DB1B24BE1D990D1C002BC2FF /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB1B24D31D9912E7002BC2FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -50,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				DB0054621D94CE9500A75829 /* RITL_OriginPushTest */,
+				DB1B24C11D990D1C002BC2FF /* NoticationContentExtension */,
+				DB1B24D71D9912E7002BC2FF /* NoticationServiceExtension */,
 				DB0054611D94CE9500A75829 /* Products */,
 				DB00547B1D95073700A75829 /* Frameworks */,
 			);
@@ -59,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				DB0054601D94CE9500A75829 /* RITL_OriginPushTest.app */,
+				DB1B24BD1D990D1C002BC2FF /* NoticationContentExtension.appex */,
+				DB1B24D61D9912E7002BC2FF /* NoticationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,12 +145,17 @@
 			isa = PBXGroup;
 			children = (
 				DB00547A1D94D11000A75829 /* RITL_OriginPushTest.entitlements */,
+				DB6DF75F1D9A172400BDD894 /* RITLOpenFunction.h */,
 				DB0054661D94CE9500A75829 /* RITLOriginPushAppDelegate.h */,
 				DB0054671D94CE9500A75829 /* RITLOriginPushAppDelegate.m */,
 				DB0054691D94CE9500A75829 /* RITLOriginPushMainViewController.h */,
 				DB00546A1D94CE9500A75829 /* RITLOriginPushMainViewController.m */,
+				DB6DF7561D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.h */,
+				DB6DF7571D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m */,
 				DB1B24B31D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.h */,
 				DB1B24B41D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m */,
+				DB6DF75C1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.h */,
+				DB6DF75D1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m */,
 				DB00546C1D94CE9500A75829 /* Main.storyboard */,
 				DB00546F1D94CE9500A75829 /* Assets.xcassets */,
 				DB0054711D94CE9500A75829 /* LaunchScreen.storyboard */,
@@ -94,8 +177,31 @@
 			isa = PBXGroup;
 			children = (
 				DB00547C1D95073700A75829 /* UserNotifications.framework */,
+				DB1B24BF1D990D1C002BC2FF /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB1B24C11D990D1C002BC2FF /* NoticationContentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DB1B24D01D99115D002BC2FF /* Stitch.png */,
+				DB1B24C21D990D1C002BC2FF /* RITLNotificationViewController.h */,
+				DB1B24C31D990D1C002BC2FF /* RITLNotificationViewController.m */,
+				DB1B24C51D990D1C002BC2FF /* MainInterface.storyboard */,
+				DB1B24C81D990D1C002BC2FF /* Info.plist */,
+			);
+			path = NoticationContentExtension;
+			sourceTree = "<group>";
+		};
+		DB1B24D71D9912E7002BC2FF /* NoticationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DB1B24D81D9912E7002BC2FF /* NotificationService.h */,
+				DB1B24D91D9912E7002BC2FF /* NotificationService.m */,
+				DB1B24DB1D9912E7002BC2FF /* Info.plist */,
+			);
+			path = NoticationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,15 +214,52 @@
 				DB00545C1D94CE9500A75829 /* Sources */,
 				DB00545D1D94CE9500A75829 /* Frameworks */,
 				DB00545E1D94CE9500A75829 /* Resources */,
+				DB1B24CF1D990D1C002BC2FF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB1B24CA1D990D1C002BC2FF /* PBXTargetDependency */,
+				DB1B24DD1D9912E7002BC2FF /* PBXTargetDependency */,
 			);
 			name = RITL_OriginPushTest;
 			productName = RITL_OriginPushTest;
 			productReference = DB0054601D94CE9500A75829 /* RITL_OriginPushTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DB1B24BC1D990D1C002BC2FF /* NoticationContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB1B24CC1D990D1C002BC2FF /* Build configuration list for PBXNativeTarget "NoticationContentExtension" */;
+			buildPhases = (
+				DB1B24B91D990D1C002BC2FF /* Sources */,
+				DB1B24BA1D990D1C002BC2FF /* Frameworks */,
+				DB1B24BB1D990D1C002BC2FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoticationContentExtension;
+			productName = NoticationContentExtension;
+			productReference = DB1B24BD1D990D1C002BC2FF /* NoticationContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		DB1B24D51D9912E7002BC2FF /* NoticationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB1B24DF1D9912E7002BC2FF /* Build configuration list for PBXNativeTarget "NoticationServiceExtension" */;
+			buildPhases = (
+				DB1B24D21D9912E7002BC2FF /* Sources */,
+				DB1B24D31D9912E7002BC2FF /* Frameworks */,
+				DB1B24D41D9912E7002BC2FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoticationServiceExtension;
+			productName = NoticationServiceExtension;
+			productReference = DB1B24D61D9912E7002BC2FF /* NoticationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -140,6 +283,16 @@
 							};
 						};
 					};
+					DB1B24BC1D990D1C002BC2FF = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8HMFNLUC68;
+						ProvisioningStyle = Automatic;
+					};
+					DB1B24D51D9912E7002BC2FF = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8HMFNLUC68;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = DB00545B1D94CE9500A75829 /* Build configuration list for PBXProject "RITL_OriginPushTest" */;
@@ -156,6 +309,8 @@
 			projectRoot = "";
 			targets = (
 				DB00545F1D94CE9500A75829 /* RITL_OriginPushTest */,
+				DB1B24BC1D990D1C002BC2FF /* NoticationContentExtension */,
+				DB1B24D51D9912E7002BC2FF /* NoticationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -171,6 +326,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB1B24BB1D990D1C002BC2FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1B24C71D990D1C002BC2FF /* MainInterface.storyboard in Resources */,
+				DB1B24D11D99115D002BC2FF /* Stitch.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB1B24D41D9912E7002BC2FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -180,12 +351,43 @@
 			files = (
 				DB00546B1D94CE9500A75829 /* RITLOriginPushMainViewController.m in Sources */,
 				DB0054681D94CE9500A75829 /* RITLOriginPushAppDelegate.m in Sources */,
+				DB6DF7581D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m in Sources */,
+				DB6DF75E1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m in Sources */,
 				DB0054651D94CE9500A75829 /* main.m in Sources */,
 				DB1B24B51D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB1B24B91D990D1C002BC2FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1B24C41D990D1C002BC2FF /* RITLNotificationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB1B24D21D9912E7002BC2FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1B24DA1D9912E7002BC2FF /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB1B24CA1D990D1C002BC2FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB1B24BC1D990D1C002BC2FF /* NoticationContentExtension */;
+			targetProxy = DB1B24C91D990D1C002BC2FF /* PBXContainerItemProxy */;
+		};
+		DB1B24DD1D9912E7002BC2FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB1B24D51D9912E7002BC2FF /* NoticationServiceExtension */;
+			targetProxy = DB1B24DC1D9912E7002BC2FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DB00546C1D94CE9500A75829 /* Main.storyboard */ = {
@@ -202,6 +404,14 @@
 				DB0054721D94CE9500A75829 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DB1B24C51D990D1C002BC2FF /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB1B24C61D990D1C002BC2FF /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -327,6 +537,56 @@
 			};
 			name = Release;
 		};
+		DB1B24CD1D990D1C002BC2FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8HMFNLUC68;
+				INFOPLIST_FILE = NoticationContentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yue.RITLOriginPushTest.NoticationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DB1B24CE1D990D1C002BC2FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8HMFNLUC68;
+				INFOPLIST_FILE = NoticationContentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yue.RITLOriginPushTest.NoticationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DB1B24E01D9912E7002BC2FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 8HMFNLUC68;
+				INFOPLIST_FILE = NoticationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yue.RITLOriginPushTest.NoticationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DB1B24E11D9912E7002BC2FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 8HMFNLUC68;
+				INFOPLIST_FILE = NoticationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yue.RITLOriginPushTest.NoticationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -344,6 +604,24 @@
 			buildConfigurations = (
 				DB0054781D94CE9500A75829 /* Debug */,
 				DB0054791D94CE9500A75829 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB1B24CC1D990D1C002BC2FF /* Build configuration list for PBXNativeTarget "NoticationContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB1B24CD1D990D1C002BC2FF /* Debug */,
+				DB1B24CE1D990D1C002BC2FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB1B24DF1D9912E7002BC2FF /* Build configuration list for PBXNativeTarget "NoticationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB1B24E01D9912E7002BC2FF /* Debug */,
+				DB1B24E11D9912E7002BC2FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,11 +16,36 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NN2-6L-b7o">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hqw-Gp-yvq">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Jd-Ce-Uq4">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-Vd-Vza">
+                                                        <state key="normal" title="I wanna a localNotification"/>
+                                                        <connections>
+                                                            <action selector="pushAnLocalNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4sj-XB-veg"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.86249202619999998" green="0.94478860799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NN2-6L-b7o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HXD-ye-sUr"/>
+                            <constraint firstItem="NN2-6L-b7o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NX3-49-Kli"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-215" y="132"/>
         </scene>
     </scenes>
 </document>
