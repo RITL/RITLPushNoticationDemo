@@ -25,7 +25,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stitch.png" translatesAutoresizingMaskIntoConstraints="NO" id="Boe-Eb-OeD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Boe-Eb-OeD">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Boe-Eb-OeD" secondAttribute="height" multiplier="1:1" id="eEb-hX-fe3"/>
                                 </constraints>
@@ -48,7 +48,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="50"/>
                     <connections>
-                        <outlet property="label" destination="GcN-lo-r42" id="lpW-cU-7IG"/>
+                        <outlet property="customimageView" destination="Boe-Eb-OeD" id="jv5-38-hAb"/>
+                        <outlet property="customlabel" destination="GcN-lo-r42" id="T4B-6g-EZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -56,7 +57,4 @@
             <point key="canvasLocation" x="-770" y="-451"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Stitch.png" width="200" height="200"/>
-    </resources>
 </document>

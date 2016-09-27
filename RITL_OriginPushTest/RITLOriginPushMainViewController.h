@@ -8,10 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class UNNotificationAttachment;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RITLOriginPushMainViewController : UIViewController
 
+/// 显示图片的控制器
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@end
+
+
+
+
+/// 图片选择控制器
+@interface RITLImagePickerControllerDelegate : NSObject<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
 

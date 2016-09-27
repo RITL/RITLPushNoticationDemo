@@ -59,6 +59,9 @@
     //弹出Alert提示一下
     [self performSelector:NSSelectorFromString(@"__showAlert:") withObject:alertString afterDelay:1];
     
+    //比如这里可以进行界面的跳转等操作...
+    
+    
     //告知完成
     completionHandler();
     

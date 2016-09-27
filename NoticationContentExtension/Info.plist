@@ -27,7 +27,7 @@
 			<key>New item</key>
 			<string></string>
 			<key>UNNotificationExtensionCategory</key>
-			<string>com.yue.originPush.myNotificationCategory</string>
+			<string>myNotificationCategory</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
 			<real>1</real>
 		</dict>

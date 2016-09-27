@@ -8,23 +8,41 @@
 
 #import "RITLOriginPushMainViewController.h"
 #import "RITLOpenFunction.h"
+#import <objc/runtime.h>
+#import "RITLPushObjectManager.h"
+#import "RITLPushFileManager.h"
 
 #ifdef __IPHONE_10_0
 @import UserNotifications;
 #endif
 
-static NSString * const requestIdentifier = @"com.yue.originPush.myNotificationCategory";
-static NSString * const locationTriggerIdentifier = @"com.yue.originPush.locationTrigger";
+
+//*********** indentifier *********//
+static NSString * const attachmentIdentifier = @"com.yue.originPush.attachmentIdentifier";
 
 
+/********* objc association *********/
+static NSString * const pickerViewControllerBlockIdentifier;
+
+/********* Key  *********/
+static NSString * const imageTransformPathKey = @"imageTransformPathKey";
 
 @interface RITLOriginPushMainViewController ()
+
+
+/// 图片选择控制器
+@property (nonatomic, strong) UIImagePickerController * imagePickerController;
+
+/// 图片选择控制器的代理
+@property (nonatomic, strong) RITLImagePickerControllerDelegate * pickerControllerDelegate;
+
 
 @end
 
 @implementation RITLOriginPushMainViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -42,102 +60,109 @@ static NSString * const locationTriggerIdentifier = @"com.yue.originPush.locatio
 {
     
 /// iOS10之前的本地推送,不弹出通知
-#ifndef __IPHONE_10_0
-    UILocalNotification * localNotification = [[UILocalNotification alloc]init];
+#ifdef __IPHONE_10_0
+    NSMutableArray <UNNotificationAttachment *> * attachments = [NSMutableArray arrayWithCapacity:1];
     
-    //设置消息体
-    localNotification.alertBody = @"RITL send a location notications (iOS9)";
+    if (self.imageView.image == nil)
+    {
+        attachments = nil;
+    }
     
-#ifdef __IPHONE_8_2
-    //设置详细内容,iOS8.2才存在
-    localNotification.alertTitle = @"I am SubTitle";
-#endif
+    else
+    {
+        //将image存到本地
+        [RITLPushFileManager saveImage:self.imageView.image key:imageTransformPathKey];
+        
+        __autoreleasing NSError * error;
+
+//        UNNotificationAttachment * attachment = [UNNotificationAttachment attachmentWithIdentifier:attachmentIdentifier URL:[RITLPushFileManager imageUrlPathWithKey:imageTransformPathKey] options:nil error:&error];
+        
+        NSAssert(error == nil, error.localizedDescription);
     
-    //设置弹出时的图
-    localNotification.alertLaunchImage = @"Stitch.png";
+//        [attachments addObject:attachment];
+        
+#warning 待查找原因，临时不附带媒体 2016-09-27
+        attachments = nil;
+    }
     
-#ifdef __IPHONE_8_0
-    //拓展id
-    localNotification.category = requestIdentifier;
-#endif
     
-    //触发声音
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
-    
-    //触发标志
-    localNotification.applicationIconBadgeNumber = 1;
-    
-    //1秒之后触发
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
-    
-    //注册通知
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    [[RITLPushObjectManager sharedInstance] pushLicationNotification:[attachments mutableCopy]];
 #else
-    
-    //初始化信息对象
-    UNMutableNotificationContent * content = [[UNMutableNotificationContent alloc]init];
-    
-    //设置内容
-    content.body = @"RITL send a location notications";
-    
-    //设置详细内容
-    content.subtitle = @"I am SubTitle";
-    
-    //设置图片名称
-    content.launchImageName = @"Stitch.png";
-    
-    //设置拓展id
-    content.categoryIdentifier = requestIdentifier;
-    
-    //设置推送声音
-    content.sound = [UNNotificationSound defaultSound];
-    
-    //设置通知
-    content.badge = @1;
-    
-#pragma mark - 延时发送
-    UNTimeIntervalNotificationTrigger * trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:false];
-    
-#pragma mark - 比如每天早上七点发送
-//    NSDateComponents * dateCompents = [NSDateComponents new];
-//    dateCompents.hour = 7;
+     [RITLPushObjectManager sharedInstance] pushLocationNotificationbeforeiOS10];
 
-//    UNCalendarNotificationTrigger * calendarTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:dateCompents repeats:true];
-    
-    
-#pragma mark - 进入到某个区域的时候进行推送
-
-    // 因为CLRegion类的初始化方法在iOS7提示废弃，改用它的子类CLCircularRegion
-//    CLRegion * region = [CLRegion alloc]initCircularRegionWithCenter:cooddinate2D(100,100) radius:200 identifier:locationTriggerIdentifier
-    
-//    //经纬度分别都是100
-//    CLLocationCoordinate2D coordinate2D = cooddinate2D(100,100);
-//
-//    //初始化范围类
-//    CLCircularRegion * region = [[CLCircularRegion alloc]initWithCenter:coordinate2D radius:200 identifier:locationTriggerIdentifier];
-//    
-//    UNLocationNotificationTrigger * locationTrigger = [UNLocationNotificationTrigger triggerWithRegion:region repeats:false];
-//    
-//    NSLog(@"%@",locationTrigger);
-//    
-    
-    //初始化通知请求
-    UNNotificationRequest * request = [UNNotificationRequest requestWithIdentifier:requestIdentifier content:content trigger:trigger];
-    
-    
-    //获得推送控制中心
-    [[UNUserNotificationCenter currentNotificationCenter]addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-       
-        if(error != nil)//出错
-        {
-            NSLog(@"error = %@",error.localizedDescription);
-        }
-        
-        
-    }];
-    
 #endif
+}
+
+/// 从本地选择一张照片
+- (IBAction)wantChooseAnImage:(id)sender
+{
+    NSLog(@"choose an image");
     
+    self.pickerControllerDelegate = [RITLImagePickerControllerDelegate new];
+    self.imagePickerController = [UIImagePickerController new];
+    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    
+    //设置代理
+    self.imagePickerController.delegate = self.pickerControllerDelegate;
+    
+    
+    __weak typeof(self) weakSelf = self;
+    
+    //设置回调
+    void(^block)(NSDictionary <NSString *, id> *)=^(NSDictionary <NSString *, id> * info){
+        
+        //获得图片对象
+        weakSelf.imageView.image = [info valueForKey:UIImagePickerControllerOriginalImage];
+        
+    };
+    
+    //设置属性
+    objc_setAssociatedObject(self.pickerControllerDelegate, &pickerViewControllerBlockIdentifier, block,OBJC_ASSOCIATION_COPY_NONATOMIC);
+    
+    //弹出控制器
+    [self presentViewController:self.imagePickerController animated:true completion:^{}];
+}
+
+
+
+@end
+
+
+
+
+
+
+
+
+@implementation RITLImagePickerControllerDelegate
+
+#pragma mark - <RITLImagePickerControllerDelegate>
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    //回调数据
+    id block = objc_getAssociatedObject(self, &pickerViewControllerBlockIdentifier);
+    
+    if (block != nil)
+    {
+        //类型进行强转执行
+        ((void(^)(NSDictionary<NSString *,id> * info))block)(info);
+    }
+    
+    //退出
+    [picker dismissViewControllerAnimated:true completion:^{}];
+    
+}
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:true completion:^{}];
+}
+
+
+-(void)dealloc
+{
+    objc_removeAssociatedObjects(self);
 }
 
 @end

@@ -12,7 +12,8 @@
 
 @interface RITLNotificationViewController () <UNNotificationContentExtension>
 
-@property IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel * customlabel;
+@property (weak, nonatomic) IBOutlet UIImageView * customimageView;
 
 @end
 
@@ -28,10 +29,18 @@
 // 收到推送消息后进行的回调
 - (void)didReceiveNotification:(UNNotification *)notification
 {
-//    self.label.text = notification.request.content.body;
+    //获得内容对象
+    UNNotificationContent * content = notification.request.content;
     
-    //
-    self.label.text = @"I am label‘s text";
+    //获得需要展示的文本
+    NSString * customTitle = [content.userInfo valueForKey:@"RITL"];
+    
+    //需要展示的图片
+    UIImage * image = [UIImage imageNamed:content.launchImageName];
+    
+    //设置
+    self.customlabel.text = customTitle;
+    self.customimageView.image = image;
     
     
 }

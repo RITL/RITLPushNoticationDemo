@@ -15,6 +15,7 @@
 #import <CoreLocation/CoreLocation.h>
 #endif
 
+
 static inline CLLocationCoordinate2D cooddinate2D(CLLocationDegrees latitude,CLLocationDegrees longitude)
 {
     CLLocationCoordinate2D locationCoordinate2D;

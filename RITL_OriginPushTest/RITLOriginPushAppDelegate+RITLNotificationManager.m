@@ -14,8 +14,9 @@
 // 注册推送成功
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    //获得token
+    // 获得token
     //    NSLog(@"token = %@",deviceToken);
+    // 将返回的token发送给服务器
 }
 
 // 注册推送失败
