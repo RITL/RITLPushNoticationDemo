@@ -11,11 +11,12 @@
 
 #ifdef __IPHONE_10_0
 @import UserNotifications;
+#import "UNNotificationTrigger+RITLConveniceInitialize.h"
 #endif
 
-/**** identifier ***/
-static NSString * const locationTriggerIdentifier = @"com.yue.originPush.locationTrigger";
-static NSString * const requestIdentifier = @"com.yue.originPush.myNotificationCategory";
+/**** extern ****/
+NSString * const RITLLocationRequestIdentifier = @"com.yue.originPush.myNotificationCategory";
+
 
 @implementation RITLPushObjectManager
 
@@ -49,7 +50,7 @@ static NSString * const requestIdentifier = @"com.yue.originPush.myNotificationC
     
 #ifdef __IPHONE_8_0
     //拓展id
-    localNotification.category = requestIdentifier;
+    localNotification.category = RITLLocationRequestIdentifier;
 #endif
     
     //触发声音
@@ -67,8 +68,18 @@ static NSString * const requestIdentifier = @"com.yue.originPush.myNotificationC
 
 
 
--(void)pushLicationNotification:(NSArray <UNNotificationAttachment *> *)attachments
+-(void)pushLicationNotification:(NSArray<UNNotificationAttachment *> *)attachments
 {
+    [self pushLicationNotification:attachments pushType:RITLPushObjectTypeNew];
+}
+
+
+
+-(void)pushLicationNotification:(NSArray <UNNotificationAttachment *> *)attachments pushType:(RITLPushObjectType)type
+{
+    
+    NSString * subTitle = (type == RITLPushObjectTypeNew ? @"I am a new SubTitle" : @"I am a update SubTitle");
+    
     //初始化信息对象
     UNMutableNotificationContent * content = [[UNMutableNotificationContent alloc]init];
     
@@ -76,13 +87,13 @@ static NSString * const requestIdentifier = @"com.yue.originPush.myNotificationC
     content.body = @"RITL send a location notications";
     
     //设置详细内容
-    content.subtitle = @"I am SubTitle";
+    content.subtitle = subTitle;
     
     //设置图片名称
     content.launchImageName = @"Stitch.png";
     
     //设置拓展id
-    content.categoryIdentifier = requestIdentifier;
+    content.categoryIdentifier = RITLLocationRequestIdentifier;
     
     //设置推送声音
     content.sound = [UNNotificationSound defaultSound];
@@ -97,33 +108,22 @@ static NSString * const requestIdentifier = @"com.yue.originPush.myNotificationC
     content.attachments = attachments;
     
 #pragma mark - 延时发送
-    UNTimeIntervalNotificationTrigger * trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:false];
+    UNTimeIntervalNotificationTrigger * trigger = [UNNotificationTrigger defaultTimeIntervalNotificationTrigger];
     
 #pragma mark - 比如每天早上七点发送
-    //    NSDateComponents * dateCompents = [NSDateComponents new];
-    //    dateCompents.hour = 7;
-    
-    //    UNCalendarNotificationTrigger * calendarTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:dateCompents repeats:true];
+    UNCalendarNotificationTrigger * calendarTrigger = [UNNotificationTrigger defaultCalendarNotificationTrigger];
     
     
-#pragma mark - 进入到某个区域的时候进行推送
-    
-    // 因为CLRegion类的初始化方法在iOS7提示废弃，改用它的子类CLCircularRegion
-    //    CLRegion * region = [CLRegion alloc]initCircularRegionWithCenter:cooddinate2D(100,100) radius:200 identifier:locationTriggerIdentifier
-    
-    //    //经纬度分别都是100
-    //    CLLocationCoordinate2D coordinate2D = cooddinate2D(100,100);
-    //
-    //    //初始化范围类
-    //    CLCircularRegion * region = [[CLCircularRegion alloc]initWithCenter:coordinate2D radius:200 identifier:locationTriggerIdentifier];
-    //
-    //    UNLocationNotificationTrigger * locationTrigger = [UNLocationNotificationTrigger triggerWithRegion:region repeats:false];
-    //
-    //    NSLog(@"%@",locationTrigger);
-    //
-    
+#pragma mark - 到某个区域的时候进行推送
+    UNLocationNotificationTrigger * locationTrigger = [UNNotificationTrigger defaultLocationNotificationTrigger];
+                                                           
+                                                           
     //初始化通知请求
-    UNNotificationRequest * request = [UNNotificationRequest requestWithIdentifier:requestIdentifier content:content trigger:trigger];
+    UNNotificationRequest * request = [UNNotificationRequest requestWithIdentifier:RITLLocationRequestIdentifier content:content trigger:trigger];
+    
+    //如果是更新，先移除
+    if (type == RITLPushObjectTypeUpdate)
+        [[UNUserNotificationCenter currentNotificationCenter]removeDeliveredNotificationsWithIdentifiers:@[RITLLocationRequestIdentifier]];
     
     
     //获得推送控制中心
@@ -133,10 +133,10 @@ static NSString * const requestIdentifier = @"com.yue.originPush.myNotificationC
         {
             NSLog(@"error = %@",error.localizedDescription);
         }
-        
-        
     }];
-    
 }
+
+
+
 
 @end

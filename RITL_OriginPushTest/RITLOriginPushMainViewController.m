@@ -14,18 +14,12 @@
 
 #ifdef __IPHONE_10_0
 @import UserNotifications;
+#import "UNNotificationAttachment+RITLConceniceInitialize.h"
 #endif
-
-
-//*********** indentifier *********//
-static NSString * const attachmentIdentifier = @"com.yue.originPush.attachmentIdentifier";
-
 
 /********* objc association *********/
 static NSString * const pickerViewControllerBlockIdentifier;
 
-/********* Key  *********/
-static NSString * const imageTransformPathKey = @"imageTransformPathKey";
 
 @interface RITLOriginPushMainViewController ()
 
@@ -61,32 +55,15 @@ static NSString * const imageTransformPathKey = @"imageTransformPathKey";
     
 /// iOS10之前的本地推送,不弹出通知
 #ifdef __IPHONE_10_0
-    NSMutableArray <UNNotificationAttachment *> * attachments = [NSMutableArray arrayWithCapacity:1];
+    NSArray <UNNotificationAttachment *> * attachments = nil;
     
-    if (self.imageView.image == nil)
+    if (self.imageView.image != nil)
     {
-        attachments = nil;
-    }
-    
-    else
-    {
-        //将image存到本地
-        [RITLPushFileManager saveImage:self.imageView.image key:imageTransformPathKey];
-        
-        __autoreleasing NSError * error;
-
-//        UNNotificationAttachment * attachment = [UNNotificationAttachment attachmentWithIdentifier:attachmentIdentifier URL:[RITLPushFileManager imageUrlPathWithKey:imageTransformPathKey] options:nil error:&error];
-        
-        NSAssert(error == nil, error.localizedDescription);
-    
-//        [attachments addObject:attachment];
-        
-#warning 待查找原因，临时不附带媒体 2016-09-27
-        attachments = nil;
+        attachments = [UNNotificationAttachment defaultNotificationAttachmentsWithImage:self.imageView.image];
     }
     
     
-    [[RITLPushObjectManager sharedInstance] pushLicationNotification:[attachments mutableCopy]];
+    [[RITLPushObjectManager sharedInstance] pushLicationNotification:attachments pushType:RITLPushObjectTypeNew];
 #else
      [RITLPushObjectManager sharedInstance] pushLocationNotificationbeforeiOS10];
 
@@ -124,6 +101,12 @@ static NSString * const imageTransformPathKey = @"imageTransformPathKey";
 }
 
 
+
+/// 更新本地的通知
+- (IBAction)updateLocationNoticiation:(id)sender
+{
+    [[RITLPushObjectManager sharedInstance]pushLicationNotification:[UNNotificationAttachment defaultNotificationAttachmentsWithImage:self.imageView.image] pushType:RITLPushObjectTypeUpdate];
+}
 
 @end
 

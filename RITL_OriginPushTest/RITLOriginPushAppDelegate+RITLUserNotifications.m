@@ -30,7 +30,6 @@
 }
 
 
-
 // 已经收到通知响应的处理方法，不管是什么通知，当通过点击推送进入到App的时候触发
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
 {

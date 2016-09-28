@@ -27,6 +27,9 @@
 		DB6DF75E1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF75D1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m */; };
 		DB6DF7641D9A608800BDD894 /* RITLPushObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF7631D9A608800BDD894 /* RITLPushObjectManager.m */; };
 		DB6DF7671D9A655400BDD894 /* RITLPushFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF7661D9A655400BDD894 /* RITLPushFileManager.m */; };
+		DB961E521D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E511D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */; };
+		DB961E551D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E541D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */; };
+		DB961E571D9B69A100998EF8 /* defaultImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB961E561D9B69A100998EF8 /* defaultImage.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,11 @@
 		DB6DF7631D9A608800BDD894 /* RITLPushObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLPushObjectManager.m; sourceTree = "<group>"; };
 		DB6DF7651D9A655400BDD894 /* RITLPushFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLPushFileManager.h; sourceTree = "<group>"; };
 		DB6DF7661D9A655400BDD894 /* RITLPushFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLPushFileManager.m; sourceTree = "<group>"; };
+		DB961E501D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNNotificationTrigger+RITLConveniceInitialize.h"; sourceTree = "<group>"; };
+		DB961E511D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationTrigger+RITLConveniceInitialize.m"; sourceTree = "<group>"; };
+		DB961E531D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNNotificationAttachment+RITLConceniceInitialize.h"; sourceTree = "<group>"; };
+		DB961E541D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationAttachment+RITLConceniceInitialize.m"; sourceTree = "<group>"; };
+		DB961E561D9B69A100998EF8 /* defaultImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultImage.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,11 +182,16 @@
 		DB0054631D94CE9500A75829 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB961E561D9B69A100998EF8 /* defaultImage.jpg */,
 				DB0054641D94CE9500A75829 /* main.m */,
-				DB6DF7621D9A608800BDD894 /* RITLPushObjectManager.h */,
-				DB6DF7631D9A608800BDD894 /* RITLPushObjectManager.m */,
 				DB6DF7651D9A655400BDD894 /* RITLPushFileManager.h */,
 				DB6DF7661D9A655400BDD894 /* RITLPushFileManager.m */,
+				DB6DF7621D9A608800BDD894 /* RITLPushObjectManager.h */,
+				DB6DF7631D9A608800BDD894 /* RITLPushObjectManager.m */,
+				DB961E501D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.h */,
+				DB961E511D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */,
+				DB961E531D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.h */,
+				DB961E541D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -333,6 +346,7 @@
 				DB0054731D94CE9500A75829 /* LaunchScreen.storyboard in Resources */,
 				DB0054701D94CE9500A75829 /* Assets.xcassets in Resources */,
 				DB00546E1D94CE9500A75829 /* Main.storyboard in Resources */,
+				DB961E571D9B69A100998EF8 /* defaultImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,11 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB00546B1D94CE9500A75829 /* RITLOriginPushMainViewController.m in Sources */,
+				DB961E521D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m in Sources */,
 				DB6DF7641D9A608800BDD894 /* RITLPushObjectManager.m in Sources */,
 				DB0054681D94CE9500A75829 /* RITLOriginPushAppDelegate.m in Sources */,
 				DB6DF7581D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m in Sources */,
 				DB6DF75E1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m in Sources */,
 				DB0054651D94CE9500A75829 /* main.m in Sources */,
+				DB961E551D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */,
 				DB6DF7671D9A655400BDD894 /* RITLPushFileManager.m in Sources */,
 				DB1B24B51D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m in Sources */,
 			);

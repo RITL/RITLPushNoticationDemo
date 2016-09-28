@@ -53,19 +53,23 @@
     NSString * path = [self imagePathWithKey:key];
     
     if (path == nil) return nil;
-
-    //进行转换
-//    NSURL * url = [[NSURL alloc]initFileURLWithPath:path];
-    NSURL * url = [[NSURL alloc]initWithString:[NSString stringWithFormat:@"file:/%@",path]];
     
+//    测试用 $$$$
+//    path = [[NSBundle mainBundle]pathForResource:@"defaultImage" ofType:@"jpg"];
+    
+    //进行转换
+    NSURL * url = [[NSURL alloc]initFileURLWithPath:path];
     
     return url;
 }
 
+
+
 #pragma mark - private
 +(NSString *)__appendDocumentPath:(NSString *)key
 {
-    return [[self __documentPath] stringByAppendingPathComponent:key];
+    //表示是图片一定要有后缀名字，好坑.. 2016-09-28
+    return [[self __documentPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@.png",key]];
 }
 
 

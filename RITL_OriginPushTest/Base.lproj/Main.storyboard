@@ -50,6 +50,15 @@
                                     <action selector="wantChooseAnImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZvM-73-WpH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMs-um-aLb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7DE-dj-7yf"/>
+                                </constraints>
+                                <state key="normal" title="I wanna update a localNotification"/>
+                                <connections>
+                                    <action selector="updateLocationNoticiation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QjO-sa-PHp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86249202619999998" green="0.94478860799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -60,9 +69,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="DBW-Hs-4az" secondAttribute="trailing" constant="10" id="JDe-de-szY"/>
                             <constraint firstItem="gAS-qs-VuO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="T7F-uP-75S"/>
                             <constraint firstItem="DBW-Hs-4az" firstAttribute="top" secondItem="gAS-qs-VuO" secondAttribute="bottom" constant="15" id="U3P-si-cnI"/>
+                            <constraint firstItem="IMs-um-aLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WdR-LS-qsp"/>
                             <constraint firstItem="EMz-Vd-Vza" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aAR-xg-U16"/>
                             <constraint firstItem="DBW-Hs-4az" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="akD-GM-no4"/>
                             <constraint firstItem="OhE-6T-Fzi" firstAttribute="top" secondItem="DBW-Hs-4az" secondAttribute="bottom" constant="20" id="bw0-0D-TpU"/>
+                            <constraint firstItem="IMs-um-aLb" firstAttribute="top" secondItem="EMz-Vd-Vza" secondAttribute="bottom" constant="20" id="f4K-M8-tyn"/>
                             <constraint firstItem="EMz-Vd-Vza" firstAttribute="top" secondItem="OhE-6T-Fzi" secondAttribute="bottom" constant="60" id="n70-U2-BYF"/>
                             <constraint firstItem="ZEO-eR-eiX" firstAttribute="leading" secondItem="OhE-6T-Fzi" secondAttribute="trailing" constant="30" id="onT-zg-fmw"/>
                         </constraints>
