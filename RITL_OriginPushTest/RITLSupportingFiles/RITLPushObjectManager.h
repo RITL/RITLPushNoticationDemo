@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, RITLPushObjectType)
 
 
 /// 本地推送的标识符
-extern NSString * const RITLLocationRequestIdentifier;
+extern NSString * const RITLRequestIdentifier;
 
 /// 负责推送消息
 @interface RITLPushObjectManager : NSObject

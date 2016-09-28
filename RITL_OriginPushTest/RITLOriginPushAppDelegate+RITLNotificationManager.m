@@ -66,6 +66,7 @@
         }
         
     }];
+
 #else
     
 #ifdef __IPHONE_8_0 //适配iOS 8
@@ -74,7 +75,7 @@
     
     [[UIApplication sharedApplication]registerForRemoteNotifications];
     
-#else //iOS7
+#else //适配iOS7
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
     

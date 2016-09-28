@@ -11,10 +11,13 @@
 #import <objc/runtime.h>
 #import "RITLPushObjectManager.h"
 #import "RITLPushFileManager.h"
+#import "RITL_WebViewController.h"
+
 
 #ifdef __IPHONE_10_0
 @import UserNotifications;
 #import "UNNotificationAttachment+RITLConceniceInitialize.h"
+#import "RITLOriginPushAppDelegate+RITLUserNotifications.h"
 #endif
 
 /********* objc association *********/
@@ -39,6 +42,21 @@ static NSString * const pickerViewControllerBlockIdentifier;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+#ifdef __IPHONE_10_0
+    //注册通知
+    [[NSNotificationCenter defaultCenter]addObserverForName:RITLOriginPushNetworkNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+       
+        //获得url
+        NSString * networkPath = [note.userInfo valueForKey:@"network"];
+        
+        //进行界面跳转
+        [self.navigationController pushViewController:[RITL_WebViewController webViewWithLoadUrl:networkPath title:@"百度" navigationDelegate:nil] animated:true];
+        
+    }];
+#endif
+    
+    
 }
 
 
@@ -47,6 +65,11 @@ static NSString * const pickerViewControllerBlockIdentifier;
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 
 
 /// 本地推送一条信息

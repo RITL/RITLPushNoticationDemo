@@ -8,6 +8,8 @@
 
 #import "RITLOriginPushAppDelegate+RITLUserNotifications.h"
 
+NSString * const RITLOriginPushNetworkNotification = @"RITLOriginPushNetworkNotification";
+
 @implementation RITLOriginPushAppDelegate (RITLUserNotifications)
 
 
@@ -60,6 +62,11 @@
     
     //比如这里可以进行界面的跳转等操作...
     
+    //for example
+    //获得百度的网址
+
+    //发送一个跳转的通知
+    [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:RITLOriginPushNetworkNotification object:nil userInfo:content.userInfo]];
     
     //告知完成
     completionHandler();

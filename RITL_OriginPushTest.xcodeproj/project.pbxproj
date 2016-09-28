@@ -30,6 +30,7 @@
 		DB961E621D9B6D4E00998EF8 /* RITLPushObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E5C1D9B6D4E00998EF8 /* RITLPushObjectManager.m */; };
 		DB961E631D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E5E1D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */; };
 		DB961E641D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E601D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */; };
+		DB961E6D1D9B9F4500998EF8 /* RITL_WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E6C1D9B9F4500998EF8 /* RITL_WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		DB961E5E1D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationAttachment+RITLConceniceInitialize.m"; sourceTree = "<group>"; };
 		DB961E5F1D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNNotificationTrigger+RITLConveniceInitialize.h"; sourceTree = "<group>"; };
 		DB961E601D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationTrigger+RITLConveniceInitialize.m"; sourceTree = "<group>"; };
+		DB961E6B1D9B9F4500998EF8 /* RITL_WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITL_WebViewController.h; sourceTree = "<group>"; };
+		DB961E6C1D9B9F4500998EF8 /* RITL_WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITL_WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,8 @@
 		DB961E581D9B6D4E00998EF8 /* RITLSupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				DB961E6B1D9B9F4500998EF8 /* RITL_WebViewController.h */,
+				DB961E6C1D9B9F4500998EF8 /* RITL_WebViewController.m */,
 				DB961E591D9B6D4E00998EF8 /* RITLPushFileManager.h */,
 				DB961E5A1D9B6D4E00998EF8 /* RITLPushFileManager.m */,
 				DB961E5B1D9B6D4E00998EF8 /* RITLPushObjectManager.h */,
@@ -387,6 +392,7 @@
 				DB0054681D94CE9500A75829 /* RITLOriginPushAppDelegate.m in Sources */,
 				DB6DF7581D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m in Sources */,
 				DB6DF75E1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m in Sources */,
+				DB961E6D1D9B9F4500998EF8 /* RITL_WebViewController.m in Sources */,
 				DB0054651D94CE9500A75829 /* main.m in Sources */,
 				DB1B24B51D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m in Sources */,
 				DB961E631D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */,

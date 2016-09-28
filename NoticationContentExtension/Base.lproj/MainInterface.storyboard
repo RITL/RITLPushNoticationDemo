@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello RITL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
@@ -27,7 +27,14 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Boe-Eb-OeD">
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="JJu-99-waV"/>
                                     <constraint firstAttribute="width" secondItem="Boe-Eb-OeD" secondAttribute="height" multiplier="1:1" id="eEb-hX-fe3"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CzK-jn-CCw">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CzK-jn-CCw" secondAttribute="height" multiplier="1:1" id="Wl9-pI-vuU"/>
+                                    <constraint firstAttribute="width" constant="50" id="pXE-Td-76s"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -36,8 +43,10 @@
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" symbolic="YES" id="0Q0-KW-PJ6"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="20" symbolic="YES" id="6Vq-gs-PHe"/>
                             <constraint firstItem="Boe-Eb-OeD" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="5" id="JE1-j7-42J"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="CzK-jn-CCw" secondAttribute="bottom" constant="7" id="W7R-ja-fvG"/>
+                            <constraint firstItem="CzK-jn-CCw" firstAttribute="top" secondItem="Boe-Eb-OeD" secondAttribute="bottom" constant="8" id="Z4Q-My-Gfg"/>
                             <constraint firstItem="Boe-Eb-OeD" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="5" id="cOa-82-1DW"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Boe-Eb-OeD" secondAttribute="bottom" constant="5" id="ejB-Ad-Ogy"/>
+                            <constraint firstAttribute="trailing" secondItem="CzK-jn-CCw" secondAttribute="trailing" constant="11" id="jyZ-5V-lj6"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" symbolic="YES" id="mYS-Cv-VNx"/>
                         </constraints>
                     </view>
@@ -46,15 +55,16 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="50"/>
+                    <size key="freeformSize" width="320" height="120"/>
                     <connections>
+                        <outlet property="attachmentImageView" destination="CzK-jn-CCw" id="GwX-3E-j7K"/>
                         <outlet property="customimageView" destination="Boe-Eb-OeD" id="jv5-38-hAb"/>
                         <outlet property="customlabel" destination="GcN-lo-r42" id="T4B-6g-EZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-770" y="-451"/>
+            <point key="canvasLocation" x="-1651" y="-324"/>
         </scene>
     </scenes>
 </document>

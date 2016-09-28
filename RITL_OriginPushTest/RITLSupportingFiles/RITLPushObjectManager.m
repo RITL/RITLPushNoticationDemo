@@ -15,7 +15,7 @@
 #endif
 
 /**** extern ****/
-NSString * const RITLLocationRequestIdentifier = @"com.yue.originPush.myNotificationCategory";
+NSString * const RITLRequestIdentifier = @"com.yue.originPush.myNotificationCategory";
 
 
 @implementation RITLPushObjectManager
@@ -50,7 +50,7 @@ NSString * const RITLLocationRequestIdentifier = @"com.yue.originPush.myNotifica
     
 #ifdef __IPHONE_8_0
     //拓展id
-    localNotification.category = RITLLocationRequestIdentifier;
+    localNotification.category = RITLRequestIdentifier;
 #endif
     
     //触发声音
@@ -93,7 +93,7 @@ NSString * const RITLLocationRequestIdentifier = @"com.yue.originPush.myNotifica
     content.launchImageName = @"Stitch.png";
     
     //设置拓展id
-    content.categoryIdentifier = RITLLocationRequestIdentifier;
+    content.categoryIdentifier = RITLRequestIdentifier;
     
     //设置推送声音
     content.sound = [UNNotificationSound defaultSound];
@@ -102,7 +102,7 @@ NSString * const RITLLocationRequestIdentifier = @"com.yue.originPush.myNotifica
     content.badge = @1;
     
     //设置附带信息
-    content.userInfo = @{@"RITL":@"RITL"};
+    content.userInfo = @{@"RITL":@"RITL",@"network":@"https://www.baidu.com"};
     
     //媒体附带信息
     content.attachments = attachments;
@@ -119,11 +119,11 @@ NSString * const RITLLocationRequestIdentifier = @"com.yue.originPush.myNotifica
                                                            
                                                            
     //初始化通知请求
-    UNNotificationRequest * request = [UNNotificationRequest requestWithIdentifier:RITLLocationRequestIdentifier content:content trigger:trigger];
+    UNNotificationRequest * request = [UNNotificationRequest requestWithIdentifier:RITLRequestIdentifier content:content trigger:trigger];
     
     //如果是更新，先移除
     if (type == RITLPushObjectTypeUpdate)
-        [[UNUserNotificationCenter currentNotificationCenter]removeDeliveredNotificationsWithIdentifiers:@[RITLLocationRequestIdentifier]];
+        [[UNUserNotificationCenter currentNotificationCenter]removeDeliveredNotificationsWithIdentifiers:@[RITLRequestIdentifier]];
     
     
     //获得推送控制中心

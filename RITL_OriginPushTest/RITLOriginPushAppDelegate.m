@@ -9,6 +9,7 @@
 #import "RITLOriginPushAppDelegate.h"
 #import "RITLOriginPushAppDelegate+RITLNotificationManager.h"
 
+
 #ifdef __IPHONE_10_0
 #import "RITLOriginPushAppDelegate+RITLUserNotifications.h"
 #else

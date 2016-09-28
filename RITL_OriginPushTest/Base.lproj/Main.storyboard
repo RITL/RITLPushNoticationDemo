@@ -10,9 +10,14 @@
         <scene sceneID="y6I-Bs-5cB">
             <objects>
                 <navigationController id="0HD-ah-5kQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v1W-Q2-eVi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="v1W-Q2-eVi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.86249202619999998" green="0.94478860799999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="13Z-3R-Dqa"/>
@@ -20,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nD6-1p-5kK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1884" y="124"/>
+            <point key="canvasLocation" x="-2607" y="86"/>
         </scene>
         <!--测试主页-->
         <scene sceneID="tne-QT-ifu">
@@ -101,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1194" y="124"/>
+            <point key="canvasLocation" x="-1732" y="95"/>
         </scene>
     </scenes>
 </document>
