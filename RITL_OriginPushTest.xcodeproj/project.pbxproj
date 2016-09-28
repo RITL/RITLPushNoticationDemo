@@ -25,11 +25,11 @@
 		DB1B24DE1D9912E7002BC2FF /* NoticationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DB1B24D61D9912E7002BC2FF /* NoticationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DB6DF7581D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF7571D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m */; };
 		DB6DF75E1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF75D1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m */; };
-		DB6DF7641D9A608800BDD894 /* RITLPushObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF7631D9A608800BDD894 /* RITLPushObjectManager.m */; };
-		DB6DF7671D9A655400BDD894 /* RITLPushFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6DF7661D9A655400BDD894 /* RITLPushFileManager.m */; };
-		DB961E521D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E511D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */; };
-		DB961E551D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E541D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */; };
 		DB961E571D9B69A100998EF8 /* defaultImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB961E561D9B69A100998EF8 /* defaultImage.jpg */; };
+		DB961E611D9B6D4E00998EF8 /* RITLPushFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E5A1D9B6D4E00998EF8 /* RITLPushFileManager.m */; };
+		DB961E621D9B6D4E00998EF8 /* RITLPushObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E5C1D9B6D4E00998EF8 /* RITLPushObjectManager.m */; };
+		DB961E631D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E5E1D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */; };
+		DB961E641D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = DB961E601D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,15 +95,15 @@
 		DB6DF75C1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RITLOriginPushAppDelegate+RITLNotificationManager.h"; sourceTree = "<group>"; };
 		DB6DF75D1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RITLOriginPushAppDelegate+RITLNotificationManager.m"; sourceTree = "<group>"; };
 		DB6DF75F1D9A172400BDD894 /* RITLOpenFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RITLOpenFunction.h; sourceTree = "<group>"; };
-		DB6DF7621D9A608800BDD894 /* RITLPushObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLPushObjectManager.h; sourceTree = "<group>"; };
-		DB6DF7631D9A608800BDD894 /* RITLPushObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLPushObjectManager.m; sourceTree = "<group>"; };
-		DB6DF7651D9A655400BDD894 /* RITLPushFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLPushFileManager.h; sourceTree = "<group>"; };
-		DB6DF7661D9A655400BDD894 /* RITLPushFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLPushFileManager.m; sourceTree = "<group>"; };
-		DB961E501D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNNotificationTrigger+RITLConveniceInitialize.h"; sourceTree = "<group>"; };
-		DB961E511D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationTrigger+RITLConveniceInitialize.m"; sourceTree = "<group>"; };
-		DB961E531D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNNotificationAttachment+RITLConceniceInitialize.h"; sourceTree = "<group>"; };
-		DB961E541D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationAttachment+RITLConceniceInitialize.m"; sourceTree = "<group>"; };
 		DB961E561D9B69A100998EF8 /* defaultImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultImage.jpg; sourceTree = "<group>"; };
+		DB961E591D9B6D4E00998EF8 /* RITLPushFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLPushFileManager.h; sourceTree = "<group>"; };
+		DB961E5A1D9B6D4E00998EF8 /* RITLPushFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLPushFileManager.m; sourceTree = "<group>"; };
+		DB961E5B1D9B6D4E00998EF8 /* RITLPushObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLPushObjectManager.h; sourceTree = "<group>"; };
+		DB961E5C1D9B6D4E00998EF8 /* RITLPushObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLPushObjectManager.m; sourceTree = "<group>"; };
+		DB961E5D1D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNNotificationAttachment+RITLConceniceInitialize.h"; sourceTree = "<group>"; };
+		DB961E5E1D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationAttachment+RITLConceniceInitialize.m"; sourceTree = "<group>"; };
+		DB961E5F1D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNNotificationTrigger+RITLConveniceInitialize.h"; sourceTree = "<group>"; };
+		DB961E601D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UNNotificationTrigger+RITLConveniceInitialize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,16 +182,9 @@
 		DB0054631D94CE9500A75829 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB961E581D9B6D4E00998EF8 /* RITLSupportingFiles */,
 				DB961E561D9B69A100998EF8 /* defaultImage.jpg */,
 				DB0054641D94CE9500A75829 /* main.m */,
-				DB6DF7651D9A655400BDD894 /* RITLPushFileManager.h */,
-				DB6DF7661D9A655400BDD894 /* RITLPushFileManager.m */,
-				DB6DF7621D9A608800BDD894 /* RITLPushObjectManager.h */,
-				DB6DF7631D9A608800BDD894 /* RITLPushObjectManager.m */,
-				DB961E501D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.h */,
-				DB961E511D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */,
-				DB961E531D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.h */,
-				DB961E541D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,6 +218,21 @@
 				DB1B24DB1D9912E7002BC2FF /* Info.plist */,
 			);
 			path = NoticationServiceExtension;
+			sourceTree = "<group>";
+		};
+		DB961E581D9B6D4E00998EF8 /* RITLSupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DB961E591D9B6D4E00998EF8 /* RITLPushFileManager.h */,
+				DB961E5A1D9B6D4E00998EF8 /* RITLPushFileManager.m */,
+				DB961E5B1D9B6D4E00998EF8 /* RITLPushObjectManager.h */,
+				DB961E5C1D9B6D4E00998EF8 /* RITLPushObjectManager.m */,
+				DB961E5D1D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.h */,
+				DB961E5E1D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m */,
+				DB961E5F1D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.h */,
+				DB961E601D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m */,
+			);
+			path = RITLSupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,16 +381,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB961E641D9B6D4E00998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m in Sources */,
+				DB961E611D9B6D4E00998EF8 /* RITLPushFileManager.m in Sources */,
 				DB00546B1D94CE9500A75829 /* RITLOriginPushMainViewController.m in Sources */,
-				DB961E521D9B61D100998EF8 /* UNNotificationTrigger+RITLConveniceInitialize.m in Sources */,
-				DB6DF7641D9A608800BDD894 /* RITLPushObjectManager.m in Sources */,
 				DB0054681D94CE9500A75829 /* RITLOriginPushAppDelegate.m in Sources */,
 				DB6DF7581D9A09B000BDD894 /* RITLOriginPushAppDelegate+RITLOldNotification.m in Sources */,
 				DB6DF75E1D9A113A00BDD894 /* RITLOriginPushAppDelegate+RITLNotificationManager.m in Sources */,
 				DB0054651D94CE9500A75829 /* main.m in Sources */,
-				DB961E551D9B660600998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */,
-				DB6DF7671D9A655400BDD894 /* RITLPushFileManager.m in Sources */,
 				DB1B24B51D98F1DE002BC2FF /* RITLOriginPushAppDelegate+RITLUserNotifications.m in Sources */,
+				DB961E631D9B6D4E00998EF8 /* UNNotificationAttachment+RITLConceniceInitialize.m in Sources */,
+				DB961E621D9B6D4E00998EF8 /* RITLPushObjectManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

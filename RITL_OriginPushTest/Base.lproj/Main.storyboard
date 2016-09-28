@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0HD-ah-5kQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Origin Push Main View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="y6I-Bs-5cB">
+            <objects>
+                <navigationController id="0HD-ah-5kQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v1W-Q2-eVi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="13Z-3R-Dqa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nD6-1p-5kK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1884" y="124"/>
+        </scene>
+        <!--测试主页-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="RITLOriginPushMainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RITLOriginPushMainViewController" sceneMemberID="viewController">
@@ -78,13 +94,14 @@
                             <constraint firstItem="ZEO-eR-eiX" firstAttribute="leading" secondItem="OhE-6T-Fzi" secondAttribute="trailing" constant="30" id="onT-zg-fmw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="测试主页" id="GXq-P4-sYm"/>
                     <connections>
                         <outlet property="imageView" destination="OhE-6T-Fzi" id="23R-O4-4lV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-806" y="106"/>
+            <point key="canvasLocation" x="-1194" y="124"/>
         </scene>
     </scenes>
 </document>
