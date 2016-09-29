@@ -110,7 +110,7 @@ NSString * const RITLRequestIdentifier = @"myNotificationCategory";
     content.badge = @1;
     
     //设置附带信息
-    content.userInfo = @{@"RITL":@"RITL",@"network":@"https://www.baidu.com"};
+    content.userInfo = @{@"RITL":@"I am RITL.",@"network":@"https://www.baidu.com"};
     
     //媒体附带信息
     content.attachments = attachments;

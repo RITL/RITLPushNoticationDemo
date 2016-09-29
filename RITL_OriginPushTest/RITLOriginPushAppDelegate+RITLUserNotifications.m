@@ -36,18 +36,28 @@ NSString * const RITLOriginPushNetworkNotification = @"RITLOriginPushNetworkNoti
 // 已经收到通知响应的处理方法，不管是什么通知，当通过点击推送进入到App的时候触发
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
 {
-#warning 这里有必要说明一下，但目前只适用于默认的远程以及本地推送，自定义UI的推送不能响应到此，需要实现拓展中UNNotificationContentExtension协议的可选方法- didReceiveNotificationResponse:completionHandler:;
+#pragma 这里有必要说明一下，但目前只适用于默认的远程以及本地推送，自定义UI的推送不能响应到此,
+#pragma 需要实现拓展中UNNotificationContentExtension协议的可选方法- didReceiveNotificationResponse:completionHandler:;
+#pragma 根据以上的回调方法判定是否能走该协议方法
     
     //这里可以先对UNNotificationResponse的identifier进行判断，是正常的通知还是我们的策略
     
     if ([response.actionIdentifier isEqualToString:foregroundActionIdentifier])
     {
-        NSLog(@"我是第一个策略动作");
+        //可以弹出Alert提示一下
+        [self performSelector:NSSelectorFromString(@"__showAlert:") withObject:@"我是第一个策略动作,收到了" afterDelay:0];
+        
+        completionHandler();return;
+        
     }
     
     else if([response.actionIdentifier isEqualToString:destructiveTextActionIdentifier])
     {
-        NSLog(@"我是第二个文本动作，我输入的文字是:%@",((UNTextInputNotificationResponse *)response).userText);
+
+        [self performSelector:NSSelectorFromString(@"__showAlert:") withObject:[NSString stringWithFormat:@"我是第二个文本动作，我输入的文字是:%@",((UNTextInputNotificationResponse *)response).userText] afterDelay:0];
+        
+        completionHandler();return;
+        
     }
     
     

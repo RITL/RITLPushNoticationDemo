@@ -38,9 +38,7 @@
     UNNotificationContent * content = notification.request.content;
     
     //获得需要展示的文本
-    NSString * customTitle = [content.userInfo valueForKey:@"RITL"];
-    
-    customTitle = @"RITL's expanding title:Click to BaiDu.com";
+    NSString * customTitle = content.body;
     
     //需要展示的图片
     UIImage * image = [UIImage imageNamed:content.launchImageName];
@@ -63,7 +61,7 @@
 // 展开后的推送消息得到点击响应
 - (void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption option))completion
 {
-    //进行回调
+    //进行回调，这里是使其消失并回到主App进行处理
     completion(UNNotificationContentExtensionResponseOptionDismissAndForwardAction);
 }
 
