@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 负责将图片存到本地的类
-@interface RITLPushFileManager : NSObject
+@interface RITLPushFilesManager : NSObject
 
 /// 将图片存到本地
 + (BOOL)saveImage:(UIImage *)image key:(NSString *)key;

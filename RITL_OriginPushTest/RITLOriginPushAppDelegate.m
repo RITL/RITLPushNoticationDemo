@@ -36,6 +36,8 @@
 }
 
 
+
+#warning 因为不想再查找控制器，所以用的最容易的alertView，iOS8之后建议使用AlertController
 - (void)__showAlert:(NSString *)alert
 {
     UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:alert message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

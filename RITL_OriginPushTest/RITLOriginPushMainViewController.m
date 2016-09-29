@@ -9,8 +9,8 @@
 #import "RITLOriginPushMainViewController.h"
 #import "RITLOpenFunction.h"
 #import <objc/runtime.h>
-#import "RITLPushObjectManager.h"
-#import "RITLPushFileManager.h"
+#import "RITLPushMessageManager.h"
+#import "RITLPushFilesManager.h"
 #import "RITL_WebViewController.h"
 
 
@@ -50,6 +50,9 @@ static NSString * const pickerViewControllerBlockIdentifier;
         //获得url
         NSString * networkPath = [note.userInfo valueForKey:@"network"];
         
+        //这里是避免通过策略收到通知，获取不到网址而进行跳转空网页的尴尬- -
+        if (networkPath == nil || [networkPath isEqualToString:@""]) return;
+        
         //进行界面跳转
         [self.navigationController pushViewController:[RITL_WebViewController webViewWithLoadUrl:networkPath title:@"百度" navigationDelegate:nil] animated:true];
         
@@ -86,7 +89,7 @@ static NSString * const pickerViewControllerBlockIdentifier;
     }
     
     
-    [[RITLPushObjectManager sharedInstance] pushLicationNotification:attachments pushType:RITLPushObjectTypeNew];
+    [[RITLPushMessageManager sharedInstance] pushLicationNotification:attachments pushType:RITLPushMessageTypeNew];
 #else
      [RITLPushObjectManager sharedInstance] pushLocationNotificationbeforeiOS10];
 
@@ -128,7 +131,7 @@ static NSString * const pickerViewControllerBlockIdentifier;
 /// 更新本地的通知
 - (IBAction)updateLocationNoticiation:(id)sender
 {
-    [[RITLPushObjectManager sharedInstance]pushLicationNotification:[UNNotificationAttachment defaultNotificationAttachmentsWithImage:self.imageView.image] pushType:RITLPushObjectTypeUpdate];
+    [[RITLPushMessageManager sharedInstance]pushLicationNotification:[UNNotificationAttachment defaultNotificationAttachmentsWithImage:self.imageView.image] pushType:RITLPushMessageTypeUpdate];
 }
 
 @end

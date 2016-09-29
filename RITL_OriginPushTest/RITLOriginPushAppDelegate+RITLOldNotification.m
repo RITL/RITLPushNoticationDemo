@@ -23,6 +23,11 @@
 // 在前台收到远程推送执行的方法,如果实现了iOS10的协议方法，该方法不执行,虽然没有标明废弃
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
+    //这个时候不会弹出推送，通常，在此处进行一次本地推送，进行通知
+    
+    //coding..
+    
+    
     //回调
     completionHandler(UIBackgroundFetchResultNewData);
 }

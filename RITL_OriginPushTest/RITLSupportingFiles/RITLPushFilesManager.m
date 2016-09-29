@@ -6,9 +6,9 @@
 //  Copyright © 2016年 YueWen. All rights reserved.
 //
 
-#import "RITLPushFileManager.h"
+#import "RITLPushFilesManager.h"
 
-@implementation RITLPushFileManager
+@implementation RITLPushFilesManager
 
 #pragma mark - save
 

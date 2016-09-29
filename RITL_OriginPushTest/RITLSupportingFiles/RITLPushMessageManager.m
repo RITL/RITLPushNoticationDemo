@@ -6,23 +6,31 @@
 //  Copyright © 2016年 YueWen. All rights reserved.
 //
 
-#import "RITLPushObjectManager.h"
+#import "RITLPushMessageManager.h"
 #import <UIKit/UIKit.h>
+#import "RITLOpenFunction.h"
+#import "RITLPushCategoryManager.h"
+
 
 #ifdef __IPHONE_10_0
 @import UserNotifications;
 #import "UNNotificationTrigger+RITLConveniceInitialize.h"
 #endif
 
+#ifdef RITLUseNotificationContentExtension
 /**** extern ****/
 NSString * const RITLRequestIdentifier = @"com.yue.originPush.myNotificationCategory";
+#else
+NSString * const RITLRequestIdentifier = @"myNotificationCategory";
+#endif
 
 
-@implementation RITLPushObjectManager
+
+@implementation RITLPushMessageManager
 
 +(instancetype)sharedInstance
 {
-    static RITLPushObjectManager * manager = nil;
+    static RITLPushMessageManager * manager = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -70,15 +78,15 @@ NSString * const RITLRequestIdentifier = @"com.yue.originPush.myNotificationCate
 
 -(void)pushLicationNotification:(NSArray<UNNotificationAttachment *> *)attachments
 {
-    [self pushLicationNotification:attachments pushType:RITLPushObjectTypeNew];
+    [self pushLicationNotification:attachments pushType:RITLPushMessageTypeNew];
 }
 
 
 
--(void)pushLicationNotification:(NSArray <UNNotificationAttachment *> *)attachments pushType:(RITLPushObjectType)type
+-(void)pushLicationNotification:(NSArray <UNNotificationAttachment *> *)attachments pushType:(RITLPushMessageType)type
 {
     
-    NSString * subTitle = (type == RITLPushObjectTypeNew ? @"I am a new SubTitle" : @"I am a update SubTitle");
+    NSString * subTitle = (type == RITLPushMessageTypeNew ? @"I am a new SubTitle" : @"I am a update SubTitle");
     
     //初始化信息对象
     UNMutableNotificationContent * content = [[UNMutableNotificationContent alloc]init];
@@ -122,7 +130,7 @@ NSString * const RITLRequestIdentifier = @"com.yue.originPush.myNotificationCate
     UNNotificationRequest * request = [UNNotificationRequest requestWithIdentifier:RITLRequestIdentifier content:content trigger:trigger];
     
     //如果是更新，先移除
-    if (type == RITLPushObjectTypeUpdate)
+    if (type == RITLPushMessageTypeUpdate)
         [[UNUserNotificationCenter currentNotificationCenter]removeDeliveredNotificationsWithIdentifiers:@[RITLRequestIdentifier]];
     
     

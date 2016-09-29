@@ -8,6 +8,8 @@
 
 #import "RITLOriginPushAppDelegate.h"
 
+
+
 #ifdef __IPHONE_10_0
 @import UserNotifications;
 #endif
@@ -17,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RITLOriginPushAppDelegate (RITLNotificationManager)
 
 @end
-
 
 
 /// 负责注册推送的管理类
@@ -35,7 +36,5 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 
 @end
-
-
 
 NS_ASSUME_NONNULL_END

@@ -76,7 +76,7 @@
 {
 #ifdef __IPHONE_9_0
     
-    if ([[UIDevice currentDevice].systemVersion compare:@"9.0"] != NSOrderedAscending)
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0)
     {
         //获得webView的数据kit
         WKWebsiteDataStore * webDataStore = [WKWebsiteDataStore defaultDataStore];

@@ -7,7 +7,7 @@
 //
 
 #import "UNNotificationAttachment+RITLConceniceInitialize.h"
-#import "RITLPushFileManager.h"
+#import "RITLPushFilesManager.h"
 
 //*********** indentifier *********//
 static NSString * const attachmentIdentifier = @"com.yue.originPush.attachmentIdentifier";
@@ -25,11 +25,11 @@ static NSString * const imageTransformPathKey = @"imageTransformPathKey";
     NSMutableArray <UNNotificationAttachment *> * attachments = [NSMutableArray arrayWithCapacity:1];
     
     //将image存到本地
-    [RITLPushFileManager saveImage:image key:imageTransformPathKey];
+    [RITLPushFilesManager saveImage:image key:imageTransformPathKey];
     
     NSError * error;
     
-    UNNotificationAttachment * attachment = [UNNotificationAttachment attachmentWithIdentifier:attachmentIdentifier URL:[RITLPushFileManager imageUrlPathWithKey:imageTransformPathKey] options:nil error:&error];
+    UNNotificationAttachment * attachment = [UNNotificationAttachment attachmentWithIdentifier:attachmentIdentifier URL:[RITLPushFilesManager imageUrlPathWithKey:imageTransformPathKey] options:nil error:&error];
     
     NSAssert(error == nil, error.localizedDescription);
     

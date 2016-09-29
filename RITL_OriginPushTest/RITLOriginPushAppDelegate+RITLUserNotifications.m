@@ -7,6 +7,7 @@
 //
 
 #import "RITLOriginPushAppDelegate+RITLUserNotifications.h"
+#import "RITLPushCategoryManager.h"
 
 NSString * const RITLOriginPushNetworkNotification = @"RITLOriginPushNetworkNotification";
 
@@ -35,30 +36,44 @@ NSString * const RITLOriginPushNetworkNotification = @"RITLOriginPushNetworkNoti
 // 已经收到通知响应的处理方法，不管是什么通知，当通过点击推送进入到App的时候触发
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
 {
+#warning 这里有必要说明一下，但目前只适用于默认的远程以及本地推送，自定义UI的推送不能响应到此，需要实现拓展中UNNotificationContentExtension协议的可选方法- didReceiveNotificationResponse:completionHandler:;
+    
+    //这里可以先对UNNotificationResponse的identifier进行判断，是正常的通知还是我们的策略
+    
+    if ([response.actionIdentifier isEqualToString:foregroundActionIdentifier])
+    {
+        NSLog(@"我是第一个策略动作");
+    }
+    
+    else if([response.actionIdentifier isEqualToString:destructiveTextActionIdentifier])
+    {
+        NSLog(@"我是第二个文本动作，我输入的文字是:%@",((UNTextInputNotificationResponse *)response).userText);
+    }
+    
     
     //获得响应对象
     UNNotification * notification = response.notification;
     
     //获得响应时间
-    NSDate * responseDate = notification.date;
+//    NSDate * responseDate = notification.date;
     
     //获得响应体
     UNNotificationRequest * request = notification.request;
     
     //获得响应体的标识符
-    NSString * identifier = request.identifier;
+//    NSString * identifier = request.identifier;
     
     // 唤起通知的对象
-    UNNotificationTrigger * trigger = request.trigger;
+//    UNNotificationTrigger * trigger = request.trigger;
     
     //获得通知内容
     UNNotificationContent * content = request.content;
     
     //比如获得我想要的alert
-    NSString * alertString = content.body;
+//    NSString * alertString = content.body;
     
-    //弹出Alert提示一下
-    [self performSelector:NSSelectorFromString(@"__showAlert:") withObject:alertString afterDelay:1];
+    //可以弹出Alert提示一下
+//    [self performSelector:NSSelectorFromString(@"__showAlert:") withObject:alertString afterDelay:1];
     
     //比如这里可以进行界面的跳转等操作...
     

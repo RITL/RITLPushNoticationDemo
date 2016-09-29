@@ -10,7 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 /// iOS9 之前处理推送的类目
 @interface RITLOriginPushAppDelegate (RITLOldNotification)
 

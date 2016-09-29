@@ -63,10 +63,17 @@
 // 展开后的推送消息得到点击响应
 - (void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption option))completion
 {
-    NSUInteger i = 0;
-    
-    
-    
+    //进行回调
+    completion(UNNotificationContentExtensionResponseOptionDismissAndForwardAction);
 }
+
+
+//typedef NS_ENUM(NSUInteger, UNNotificationContentExtensionResponseOption)
+//{
+//    UNNotificationContentExtensionResponseOptionDoNotDismiss, //默认表示不消失
+//    UNNotificationContentExtensionResponseOptionDismiss,//消失
+//    UNNotificationContentExtensionResponseOptionDismissAndForwardAction,//消失并让App对它进行处理，这个时候才会走原应用的回调
+//};
+
 
 @end

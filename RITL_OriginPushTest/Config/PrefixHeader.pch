@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  RITL_OriginPushTest
+//
+//  Created by YueWen on 2016/9/29.
+//  Copyright © 2016年 YueWen. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "RITLOpenConfig.h"
+#import "RITLOpenFunction.h"
+
+#endif /* PrefixHeader_pch */
