@@ -36,7 +36,8 @@ extern NSString * const RITLRequestIdentifier;
 
 
 /// iOS10 之后的本地推送，并根据类型选择是新的推送还是更新
-- (void)pushLicationNotification:(nullable NSArray <UNNotificationAttachment *> *)attachments pushType:(RITLPushMessageType)type NS_AVAILABLE_IOS(10_0);
+- (void)pushLicationNotification:(nullable NSArray <UNNotificationAttachment *> *)attachments
+                        pushType:(RITLPushMessageType)type NS_AVAILABLE_IOS(10_0);
 
 @end
 

@@ -31,7 +31,7 @@
 }
 
 
-// 收到推送消息后进行的回调
+// 收到推送消息后进行的回调，必须实现的方法
 - (void)didReceiveNotification:(UNNotification *)notification
 {
     //获得内容对象
@@ -50,8 +50,7 @@
     self.customimageView.image = image;
     
     //这是通知里带的照片
-    self.attachmentImageView.image = nil;//一般是网络图片
-    
+    self.attachmentImageView.image = nil;//直接使用attachment对象的路径进行加载即可
 }
 
 
@@ -61,7 +60,7 @@
 // 展开后的推送消息得到点击响应
 - (void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void (^)(UNNotificationContentExtensionResponseOption option))completion
 {
-    //进行回调，这里是使其消失并回到主App进行处理
+    //进行回调，这里是使其消失并回到主App进行处理，处理完毕之后会走UNUserNotificationCenter的协议方法
     completion(UNNotificationContentExtensionResponseOptionDismissAndForwardAction);
 }
 

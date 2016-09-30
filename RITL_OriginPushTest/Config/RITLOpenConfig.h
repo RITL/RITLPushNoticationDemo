@@ -10,7 +10,7 @@
 #define RITLOpenConfig_h
 
 /// 是否对iOS10之前的推送进行添加策略，如果不需要，进行注释即可
-//#define ShouldAddDefaultCategorysBeforeiOS10
+#define ShouldAddDefaultCategorysBeforeiOS10
 
 /// 是否对iOS10版本的推送进行添加策略，如果不需要，进行注释即可
 #define ShouldAddDefaultCategorys

@@ -9,8 +9,6 @@
 #ifndef RITLOpenFunction_h
 #define RITLOpenFunction_h
 
-
-
 #ifdef __IPHONE_8_0
 @import CoreLocation;
 #else

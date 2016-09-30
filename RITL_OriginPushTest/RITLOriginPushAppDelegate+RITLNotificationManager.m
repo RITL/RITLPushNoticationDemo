@@ -15,7 +15,7 @@
 // 注册推送成功
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    //    NSLog(@"token = %@",deviceToken);
+    NSLog(@"token = %@",deviceToken);
     // 将返回的token发送给服务器
 }
 
@@ -66,9 +66,9 @@
     
     
 #ifdef ShouldAddDefaultCategorys
-    
     [RITLPushCategoryManager addDefaultCategorys];
-    
+#else
+        [[UNUserNotificationCenter currentNotificationCenter]setNotificationCategories:[NSSet set]];
 #endif
 
     //设置代理对象
